@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Witaj Astral</h1>
+    <form method="post">
+        <div class="form-row">
+            <div class="col">
+                <label asp-for="Fizbuz.Numerek"></label>
+                <input asp-for="Fizbuz.Numerek" required /><br />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <b> <span asp-validation-for="Fizbuz.Numerek" class="text-danger"></span> </b>
+            </div>
+        </div>
+
+</form>
+</div>

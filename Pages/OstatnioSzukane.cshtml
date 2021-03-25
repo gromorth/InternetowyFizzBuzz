@@ -1,0 +1,22 @@
+﻿@page
+@model InternetowyFizzBuzz.Pages.OstatnioSzukaneModel
+@{
+    ViewData["Title"] = "Ostatnio Szukane";
+}
+<p>Dane w zapisane w sesji:</p>
+
+@if (Model.CzySesja != null)
+{
+    <p>
+        Twoja liczba: @Html.DisplayNameFor(model => Model.CzySesja.Numerek):
+        @Model.CzySesja.Numerek
+    </p>
+    <p>
+        Data zapytania: @Html.DisplayNameFor(model => Model.CzySesja.Data):
+        @Model.CzySesja.Data
+    </p>
+    <p>
+        Odpowiedź: @Html.DisplayNameFor(model => Model.CzySesja.Odpowiedz):
+        @Model.CzySesja.Odpowiedz
+    </p>
+}
