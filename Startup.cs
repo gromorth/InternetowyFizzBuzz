@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using InternetowyFizzBuzz.Models;
+using InternetowyFizzBuzz.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace InternetowyFizzBuzz
 {
@@ -24,6 +26,10 @@ namespace InternetowyFizzBuzz
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<FizzContex>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("FizInter"));
+            });
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession(options =>

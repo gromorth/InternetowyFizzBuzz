@@ -5,10 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using InternetowyFizzBuzz.Models;
 
+
 namespace InternetowyFizzBuzz.Models
 {
     public class FizzBuzz
     {
+        public int Id { get; set; }
+
+        [Required]
         [Display(Name = " ")]
         [Range(1, 1000),]
 
@@ -17,6 +21,7 @@ namespace InternetowyFizzBuzz.Models
         [Display(Name =" ")]
         public string Odpowiedz { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [Display(Name =" ")]
         public DateTime Data { get; set; }
