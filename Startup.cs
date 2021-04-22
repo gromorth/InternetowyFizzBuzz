@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using InternetowyFizzBuzz.Models;
 using InternetowyFizzBuzz.Data;
 using Microsoft.EntityFrameworkCore;
+using InternetowyFizzBuzzv2;
 
 namespace InternetowyFizzBuzz
 {
@@ -39,6 +40,9 @@ namespace InternetowyFizzBuzz
                 options.Cookie.IsEssential = true;
             });
 
+            services.AddBrowserDetection();
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +66,9 @@ namespace InternetowyFizzBuzz
 
             app.UseAuthorization();
             app.UseSession();
+
+            //app.UseBrowserCheckMiddleware();
+            app.UseMiddleware<BrowserCheckMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
